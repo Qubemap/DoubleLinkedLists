@@ -1,7 +1,27 @@
 #include "LinkedList.h"
+#include <iostream> 
+using namespace std;
 
 template <typename T>
-void LinkedList<T>::PushFront(T* data)
+void LinkedList<T>::PrintList()
+{
+	Node* currentNode = head;
+
+	if (head == NULL)
+	{
+		cout << "List empty" << endl;
+		return;
+	}
+
+	while (currentNode != NULL)
+	{
+		cout << currentNode->data << " ";
+		currentNode = currentNode->next;
+	}
+}
+
+template <typename T>
+void LinkedList<T>::PushFront(T data)
 {
 	Node* newNode = new Node(data);
 
@@ -20,7 +40,7 @@ void LinkedList<T>::PushFront(T* data)
 }
 
 template <typename T>
-void LinkedList<T>::PushBack(T* data)
+void LinkedList<T>::PushBack(T data)
 {
 	Node* newNode = new Node(data);
 
@@ -39,7 +59,7 @@ void LinkedList<T>::PushBack(T* data)
 }
 
 template <typename T>
-void LinkedList<T>::Insert(int iterator, T* Data)
+void LinkedList<T>::Insert(int iterator, T Data)
 {
 
 }
