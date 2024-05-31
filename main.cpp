@@ -13,8 +13,8 @@ int main()
 	list.PushFront(2);
 	list.PushFront(1);
 	list.PushBack(5);
+	list.PrintList();
 
-
-
+	return 0;
 }
 
