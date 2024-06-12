@@ -6,13 +6,18 @@ using namespace std;
 
 int main()
 {
-	LinkedList<int> list;
+	LinkedList<string> list;
 
-	list.PushFront(4);
-	list.PushFront(3);
-	list.PushFront(2);
-	list.PushFront(1);
-	list.PushBack(5);
+	list.PushFront("one");
+	
+	list.PushFront("two");
+	
+	list.PushFront("three");
+	
+	list.PushFront("four");
+
+	//list.PushBack("five");
+
 	list.PrintList();
 
 	return 0;
