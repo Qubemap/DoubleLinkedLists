@@ -1,8 +1,7 @@
 #include "LinkedList.h"
-#include <string>
-#include <iostream> 
-using namespace std;
+#include "LinkedList.cpp" //DO NOT DELETE
 
+using namespace std;
 
 int main()
 {
@@ -16,7 +15,7 @@ int main()
 	
 	list.PushFront("four");
 
-	//list.PushBack("five");
+	list.PushBack("five");
 
 	list.PrintList();
 
