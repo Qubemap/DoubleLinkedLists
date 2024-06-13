@@ -1,21 +1,18 @@
 #include "LinkedList.h"
-#include "LinkedList.cpp" //DO NOT DELETE
 
-using namespace std;
+#include <string>
 
 int main()
 {
-	LinkedList<string> list;
+	LinkedList<std::string> list;
+	
+	list.PushFront("Three");
+	
+	list.PushFront("Two");
+	
+	list.PushFront("One");
 
-	list.PushFront("one");
-	
-	list.PushFront("two");
-	
-	list.PushFront("three");
-	
-	list.PushFront("four");
-
-	list.PushBack("five");
+	list.PushBack("Four");
 
 	list.PrintList();
 
