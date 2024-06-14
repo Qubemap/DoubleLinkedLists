@@ -1,6 +1,8 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
+#include "Iterator.h"
+
 #include <iostream>
 
 template <class T>
@@ -8,23 +10,44 @@ class LinkedList
 {
 private:
 
-	template <class T>
 	struct node
 	{
-		node<T>* next;
-		node<T>* previous;
+		node* next;
+		node* previous;
 		T data;
-		node<T>()
+		node()
 		{
 			next = NULL;
 			previous = NULL;
 		}
 	};
 
-	node<T>* head;
-	node<T>* tail;
+	node* head;
+	node* tail;
 
-	ListIterator<T> Iterator;
+public:
+
+	struct Iterator
+	{
+	public:
+
+		Iterator()
+		{
+			currentNode = NULL;
+		}
+
+		Iterator(node* node)
+		{
+			currentNode = node;
+		}
+
+
+	private:
+		node* currentNode;
+	};
+
+	node* head;
+	node* tail;
 
 public:
 
@@ -41,7 +64,7 @@ public:
 	//Prints list data from head to NULL
 	void PrintList()
 	{
-		node<T>* currentNode = head;
+		node* currentNode = head;
 
 		if (head == NULL)
 		{
@@ -66,7 +89,7 @@ public:
 	//Add node containing data to head of list
 	void PushFront(T data)
 	{
-		node<T>* newNode = new node<T>;
+		node* newNode = new node;
 		newNode->data = data;
 
 		if (head == NULL)
@@ -85,7 +108,7 @@ public:
 	//Add node containing data to tail of list
 	void PushBack(T data)
 	{
-		node<T>* newNode = new node<T>;
+		node* newNode = new node;
 		newNode->data = data;
 
 		if (head == NULL)
@@ -100,26 +123,6 @@ public:
 			tail = newNode;
 		}
 	}
-
-private:
-
-	template <class T>
-	struct node
-	{
-		node<T>* next;
-		node<T>* previous;
-		T data;
-		node<T>()
-		{
-			next = NULL;
-			previous = NULL;
-			//data = NULL;
-		}
-	};
-
-	node<T>* head;
-	node<T>* tail;
-
 };
 
 #endif
